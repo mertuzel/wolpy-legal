@@ -134,37 +134,41 @@
 
   </div>
 
-  <script>
-    const en = document.getElementById("content-en");
-    const tr = document.getElementById("content-tr");
-    const btnEn = document.getElementById("btn-en");
-    const btnTr = document.getElementById("btn-tr");
+<script>
+  const en = document.getElementById("content-en");
+  const tr = document.getElementById("content-tr");
+  const btnEn = document.getElementById("btn-en");
+  const btnTr = document.getElementById("btn-tr");
+  const updatedText = document.getElementById("updated-text");
 
-    function showEN() {
-      en.classList.remove("hidden");
-      tr.classList.add("hidden");
-      btnEn.classList.add("active");
-      btnTr.classList.remove("active");
-    }
+  function showEN() {
+    en.classList.remove("hidden");
+    tr.classList.add("hidden");
+    btnEn.classList.add("active");
+    btnTr.classList.remove("active");
+    updatedText.textContent = "Last updated: February 10, 2026";
+  }
 
-    function showTR() {
-      tr.classList.remove("hidden");
-      en.classList.add("hidden");
-      btnTr.classList.add("active");
-      btnEn.classList.remove("active");
-    }
+  function showTR() {
+    tr.classList.remove("hidden");
+    en.classList.add("hidden");
+    btnTr.classList.add("active");
+    btnEn.classList.remove("active");
+    updatedText.textContent = "Son güncelleme: 10 Şubat 2026";
+  }
 
-    // Auto language detection
-    const lang = navigator.language || navigator.userLanguage;
-    if (lang && lang.startsWith("tr")) {
-      showTR();
-    } else {
-      showEN();
-    }
+  // Auto language detection
+  const lang = navigator.language || navigator.userLanguage;
+  if (lang && lang.startsWith("tr")) {
+    showTR();
+  } else {
+    showEN();
+  }
 
-    // Manual switch
-    btnEn.onclick = showEN;
-    btnTr.onclick = showTR;
-  </script>
+  // Manual switch
+  btnEn.onclick = showEN;
+  btnTr.onclick = showTR;
+</script>
+
 </body>
 </html>
