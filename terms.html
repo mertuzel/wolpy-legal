@@ -164,33 +164,53 @@
   const btnTr = document.getElementById("btn-tr");
   const updatedText = document.getElementById("updated-text");
 
-  function showEN() {
+  function showEN(save = true) {
     en.classList.remove("hidden");
     tr.classList.add("hidden");
     btnEn.classList.add("active");
     btnTr.classList.remove("active");
     updatedText.textContent = "Last updated: February 10, 2026";
+    if (save) localStorage.setItem("lang", "en");
   }
 
-  function showTR() {
+  function showTR(save = true) {
     tr.classList.remove("hidden");
     en.classList.add("hidden");
     btnTr.classList.add("active");
     btnEn.classList.remove("active");
     updatedText.textContent = "Son güncelleme: 10 Şubat 2026";
+    if (save) localStorage.setItem("lang", "tr");
   }
 
-  // Auto language detection
-  const lang = navigator.language || navigator.userLanguage;
-  if (lang && lang.startsWith("tr")) {
-    showTR();
+  // 1️⃣ URL parametresi (APP'TEN GELEN DİL)
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get("lang");
+
+  if (urlLang === "tr") {
+    showTR(false);
+  } else if (urlLang === "en") {
+    showEN(false);
   } else {
-    showEN();
+    // 2️⃣ Daha önce seçilmiş dil
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang === "tr") {
+      showTR(false);
+    } else if (savedLang === "en") {
+      showEN(false);
+    } else {
+      // 3️⃣ Tarayıcı dili (fallback)
+      const browserLang = navigator.language || navigator.userLanguage;
+      if (browserLang && browserLang.startsWith("tr")) {
+        showTR(false);
+      } else {
+        showEN(false);
+      }
+    }
   }
 
-  // Manual switch
-  btnEn.onclick = showEN;
-  btnTr.onclick = showTR;
+  // 4️⃣ Manuel dil değişimi
+  btnEn.onclick = () => showEN(true);
+  btnTr.onclick = () => showTR(true);
 </script>
 </body>
 </html>
