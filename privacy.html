@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- CACHE KIRICI -->
+  <!-- Cache control -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -28,7 +28,7 @@
 
     .lang-switch {
       text-align: right;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       font-size: 14px;
     }
 
@@ -38,7 +38,7 @@
       color: #F9FAFB;
       cursor: pointer;
       margin-left: 8px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     .lang-switch button.active {
@@ -51,13 +51,9 @@
       margin-bottom: 16px;
     }
 
-    h2 {
-      font-size: 18px;
-      margin-top: 24px;
-    }
-
     p {
       opacity: 0.9;
+      margin-bottom: 16px;
     }
 
     .hidden {
@@ -74,7 +70,7 @@
 <body>
   <div class="container">
 
-    <!-- Dil Seçici -->
+    <!-- Language Switch -->
     <div class="lang-switch">
       <button id="btn-en">🇬🇧 English</button>
       <button id="btn-tr">🇹🇷 Türkçe</button>
@@ -84,30 +80,56 @@
     <div id="content-en">
       <h1>Privacy Policy</h1>
 
-      <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information.</p>
+      <p>Wolpy respects your privacy.</p>
 
-      <h2>Information We Collect</h2>
-      <p>We do not collect personal data unless you explicitly provide it.</p>
+      <p>
+        We do not collect, store, or share any personal data. The app does not
+        require user accounts and does not use tracking technologies or analytics
+        tools.
+      </p>
 
-      <h2>Contact</h2>
-      <p>If you have questions, contact us at support@email.com.</p>
+      <p>
+        All wallpapers displayed in the app are provided through the Pexels API.
+        Wolpy does not claim ownership of any images. Pexels is used solely as a
+        content provider and does not receive or collect personal data from users
+        through this app.
+      </p>
+
+      <p>
+        If you have any questions regarding this Privacy Policy, you can contact
+        us at:<br>
+        <strong>support@email.com</strong>
+      </p>
     </div>
 
     <!-- TURKISH -->
     <div id="content-tr" class="hidden">
       <h1>Gizlilik Politikası</h1>
 
-      <p>Gizliliğiniz bizim için önemlidir. Bu Gizlilik Politikası, bilgilerinizi nasıl topladığımızı ve koruduğumuzu açıklar.</p>
+      <p>Wolpy gizliliğinize saygı duyar.</p>
 
-      <h2>Toplanan Bilgiler</h2>
-      <p>Açıkça paylaşmadığınız sürece kişisel veri toplamayız.</p>
+      <p>
+        Uygulama, herhangi bir kişisel veri toplamaz, saklamaz veya paylaşmaz.
+        Kullanıcı hesabı gerektirmez ve izleme teknolojileri veya analiz araçları
+        kullanmaz.
+      </p>
 
-      <h2>İletişim</h2>
-      <p>Sorularınız için support@email.com adresinden bize ulaşabilirsiniz.</p>
+      <p>
+        Uygulamada yer alan tüm duvar kağıtları Pexels API aracılığıyla
+        sağlanmaktadır. Wolpy, görsellerin mülkiyetini talep etmez. Pexels yalnızca
+        içerik sağlayıcı olarak kullanılmakta olup, bu uygulama üzerinden
+        kullanıcılara ait kişisel verileri toplamaz veya almaz.
+      </p>
+
+      <p>
+        Bu Gizlilik Politikası ile ilgili sorularınız için bizimle iletişime
+        geçebilirsiniz:<br>
+        <strong>support@email.com</strong>
+      </p>
     </div>
 
     <div class="updated">
-      Last updated: 10 Feb 2026
+      Last updated: February 10, 2026
     </div>
 
   </div>
@@ -132,7 +154,7 @@
       btnEn.classList.remove("active");
     }
 
-    // Otomatik dil algılama
+    // Auto language detection
     const lang = navigator.language || navigator.userLanguage;
     if (lang && lang.startsWith("tr")) {
       showTR();
@@ -140,7 +162,7 @@
       showEN();
     }
 
-    // Manuel switch
+    // Manual switch
     btnEn.onclick = showEN;
     btnTr.onclick = showTR;
   </script>
