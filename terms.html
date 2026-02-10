@@ -1,46 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+
+  <!-- Cache control -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Use</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background-color: #0B1020;
+      color: #F9FAFB;
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #F9FAFB;
+      cursor: pointer;
+      margin-left: 8px;
+      opacity: 0.6;
+    }
+
+    .lang-switch button.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    p {
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .updated {
+      margin-top: 40px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
 
-<body style="
-  margin: 0;
-  padding: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #0B1020;
-  color: #F9FAFB;
-  line-height: 1.6;
-">
+    <!-- Language Switch -->
+    <div class="lang-switch">
+      <button id="btn-en">🇬🇧 English</button>
+      <button id="btn-tr">🇹🇷 Türkçe</button>
+    </div>
 
-  <h1 style="margin-top: 0;">Terms of Use</h1>
+    <!-- ENGLISH -->
+    <div id="content-en">
+      <h1>Terms of Use</h1>
 
-  <p>
-    Wolpy provides wallpapers for personal, non-commercial use only.
-  </p>
+      <p>
+        By using the Wolpy app, you agree to these Terms of Use. If you do not
+        agree with any part of these terms, please do not use the app.
+      </p>
 
-  <p>
-    All images available in the app are sourced from Pexels.
-    Image rights belong to their respective creators.
-  </p>
+      <h2>Use of the App</h2>
+      <p>
+        Wolpy is provided for personal, non-commercial use only. You may not use
+        the app for any unlawful or prohibited purpose.
+      </p>
 
-  <p>
-    Wolpy does not guarantee the accuracy, availability, or suitability of the content.
-    The app is provided “as is” without warranties of any kind.
-  </p>
+      <h2>Content</h2>
+      <p>
+        All wallpapers available in the app are provided through the Pexels API.
+        Wolpy does not claim ownership of any images. Image usage is subject to
+        the Pexels license terms.
+      </p>
 
-  <p>
-    By using the app, you agree to these Terms of Use.
-  </p>
+      <h2>Disclaimer</h2>
+      <p>
+        The app is provided "as is" without warranties of any kind. We do not
+        guarantee that the app will be error-free or uninterrupted.
+      </p>
 
-  <p style="opacity: 0.7; font-size: 14px;">
-    Last updated: 2026
-  </p>
+      <h2>Changes</h2>
+      <p>
+        These Terms of Use may be updated from time to time. Continued use of the
+        app constitutes acceptance of the updated terms.
+      </p>
+    </div>
 
+    <!-- TURKISH -->
+    <div id="content-tr" class="hidden">
+      <h1>Kullanım Koşulları</h1>
+
+      <p>
+        Wolpy uygulamasını kullanarak bu Kullanım Koşullarını kabul etmiş
+        olursunuz. Koşulların herhangi bir bölümünü kabul etmiyorsanız lütfen
+        uygulamayı kullanmayın.
+      </p>
+
+      <h2>Uygulamanın Kullanımı</h2>
+      <p>
+        Wolpy yalnızca kişisel ve ticari olmayan kullanım için sunulmaktadır.
+        Uygulama, yasa dışı veya yasaklanmış amaçlarla kullanılamaz.
+      </p>
+
+      <h2>İçerik</h2>
+      <p>
+        Uygulamada yer alan tüm duvar kağıtları Pexels API aracılığıyla
+        sağlanmaktadır. Wolpy, görsellerin mülkiyetini talep etmez. Görsellerin
+        kullanımı Pexels lisans koşullarına tabidir.
+      </p>
+
+      <h2>Sorumluluk Reddi</h2>
+      <p>
+        Uygulama "olduğu gibi" sunulmaktadır. Uygulamanın hatasız veya kesintisiz
+        çalışacağı garanti edilmez.
+      </p>
+
+      <h2>Değişiklikler</h2>
+      <p>
+        Bu Kullanım Koşulları zaman zaman güncellenebilir. Uygulamanın
+        kullanılmaya devam edilmesi, güncellenmiş koşulların kabul edildiği
+        anlamına gelir.
+      </p>
+    </div>
+
+    <div class="updated">
+      Last updated: February 10, 2026
+    </div>
+
+  </div>
+
+  <script>
+    const en = document.getElementById("content-en");
+    const tr = document.getElementById("content-tr");
+    const btnEn = document.getElementById("btn-en");
+    const btnTr = document.getElementById("btn-tr");
+
+    function showEN() {
+      en.classList.remove("hidden");
+      tr.classList.add("hidden");
+      btnEn.classList.add("active");
+      btnTr.classList.remove("active");
+    }
+
+    function showTR() {
+      tr.classList.remove("hidden");
+      en.classList.add("hidden");
+      btnTr.classList.add("active");
+      btnEn.classList.remove("active");
+    }
+
+    // Auto language detection
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang && lang.startsWith("tr")) {
+      showTR();
+    } else {
+      showEN();
+    }
+
+    // Manual switch
+    btnEn.onclick = showEN;
+    btnTr.onclick = showTR;
+  </script>
 </body>
 </html>
