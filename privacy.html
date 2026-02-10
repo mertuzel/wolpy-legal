@@ -1,48 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+
+  <!-- CACHE KIRICI -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background-color: #0B1020;
+      color: #F9FAFB;
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #F9FAFB;
+      cursor: pointer;
+      margin-left: 8px;
+      opacity: 0.7;
+    }
+
+    .lang-switch button.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    p {
+      opacity: 0.9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .updated {
+      margin-top: 40px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
 
-<body style="
-  margin: 0;
-  padding: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #0B1020;
-  color: #F9FAFB;
-  line-height: 1.6;
-">
+    <!-- Dil Seçici -->
+    <div class="lang-switch">
+      <button id="btn-en">🇬🇧 English</button>
+      <button id="btn-tr">🇹🇷 Türkçe</button>
+    </div>
 
-  <h1 style="margin-top: 0;">Privacy Policy</h1>
+    <!-- ENGLISH -->
+    <div id="content-en">
+      <h1>Privacy Policy</h1>
 
-  <p>
-    Wolpy respects your privacy.
-  </p>
+      <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information.</p>
 
-  <p>
-    We do not collect, store, or share any personal data.
-    The app does not require user accounts and does not use tracking technologies.
-  </p>
+      <h2>Information We Collect</h2>
+      <p>We do not collect personal data unless you explicitly provide it.</p>
 
-  <p>
-    All wallpapers displayed in the app are provided by Pexels.
-    Wolpy does not claim ownership of any images.
-  </p>
+      <h2>Contact</h2>
+      <p>If you have questions, contact us at support@email.com.</p>
+    </div>
 
-  <p>
-    If you have any questions regarding this Privacy Policy, you can contact us at:
-    <br>
-    <strong>support@email.com</strong>
-  </p>
+    <!-- TURKISH -->
+    <div id="content-tr" class="hidden">
+      <h1>Gizlilik Politikası</h1>
 
-  <p style="opacity: 0.7; font-size: 14px;">
-    Last updated: 2026
-  </p>
+      <p>Gizliliğiniz bizim için önemlidir. Bu Gizlilik Politikası, bilgilerinizi nasıl topladığımızı ve koruduğumuzu açıklar.</p>
 
+      <h2>Toplanan Bilgiler</h2>
+      <p>Açıkça paylaşmadığınız sürece kişisel veri toplamayız.</p>
+
+      <h2>İletişim</h2>
+      <p>Sorularınız için support@email.com adresinden bize ulaşabilirsiniz.</p>
+    </div>
+
+    <div class="updated">
+      Last updated: 10 Feb 2026
+    </div>
+
+  </div>
+
+  <script>
+    const en = document.getElementById("content-en");
+    const tr = document.getElementById("content-tr");
+    const btnEn = document.getElementById("btn-en");
+    const btnTr = document.getElementById("btn-tr");
+
+    function showEN() {
+      en.classList.remove("hidden");
+      tr.classList.add("hidden");
+      btnEn.classList.add("active");
+      btnTr.classList.remove("active");
+    }
+
+    function showTR() {
+      tr.classList.remove("hidden");
+      en.classList.add("hidden");
+      btnTr.classList.add("active");
+      btnEn.classList.remove("active");
+    }
+
+    // Otomatik dil algılama
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang && lang.startsWith("tr")) {
+      showTR();
+    } else {
+      showEN();
+    }
+
+    // Manuel switch
+    btnEn.onclick = showEN;
+    btnTr.onclick = showTR;
+  </script>
 </body>
 </html>
