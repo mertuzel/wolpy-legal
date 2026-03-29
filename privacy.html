@@ -67,146 +67,198 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
 
-    <!-- Language Switch -->
-    <div class="lang-switch">
-      <button id="btn-en">🇬🇧 English</button>
-      <button id="btn-tr">🇹🇷 Türkçe</button>
-    </div>
+<div class="container">
 
-    <!-- ENGLISH -->
-    <div id="content-en">
-  <h1>Privacy Policy</h1>
+  <div class="lang-switch">
+    <button id="btn-en">🇬🇧 English</button>
+    <button id="btn-tr">🇹🇷 Türkçe</button>
+  </div>
 
-  <p>Wolpy respects your privacy and is committed to protecting your information.</p>
+  <!-- EN -->
+  <div id="content-en">
 
-  <p>
-    Wolpy may collect limited, non-personal information to improve the app
-    experience. This may include anonymous usage data such as app performance,
-    feature usage, and general interaction with the app.
-  </p>
+    <h1>Privacy Policy</h1>
 
-  <p>
-    Some services used within the app may provide analytics or infrastructure
-    support. These services may process anonymous data to help improve the
-    stability and functionality of the application.
-  </p>
+    <p>
+      Wolpy respects your privacy and is committed to protecting your information.
+    </p>
 
-  <p>
-    Wallpapers available in the app are provided as part of the Wolpy content
-    library. Some wallpapers may be created using artificial intelligence or
-    provided through third-party content sources.
-  </p>
+    <p>
+      Wolpy may collect limited, non-personal information to improve the app
+      experience. This may include anonymous usage data such as app performance,
+      feature usage, and general interaction with the app.
+    </p>
 
-  <p>
-    In the future, Wolpy may introduce additional features such as user accounts,
-    personalization, or subscriptions. If such features require the processing of
-    personal information, this Privacy Policy will be updated accordingly.
-  </p>
+    <p>
+      Wolpy may use analytics tools to better understand how the app is used.
+      These tools may collect anonymous technical information such as device type,
+      app version, interactions within the app, and general usage patterns.
+      This information is used solely to improve user experience and app performance.
+    </p>
 
-  <p>
-    If you have any questions regarding this Privacy Policy, you can contact us at:<br>
-    <strong>wolpy.support@gmail.com</strong>
-  </p>
-</div>
+    <p>
+      Some services used within the app may provide analytics or infrastructure
+      support. These services may process anonymous data to help improve the
+      stability and functionality of the application.
+    </p>
 
-    <!-- TURKISH -->
-   <div id="content-tr" class="hidden">
-  <h1>Gizlilik Politikası</h1>
+    <p>
+      Wallpapers available in the app are provided as part of the Wolpy content
+      library. Some wallpapers may be created using artificial intelligence or
+      provided through third-party content sources.
+    </p>
 
-  <p>Wolpy, kullanıcı gizliliğine saygı duyar ve bilgilerinizi korumayı taahhüt eder.</p>
+    <p>
+      In the future, Wolpy may introduce additional features such as user accounts,
+      personalization, or subscriptions. If such features require the processing of
+      personal information, this Privacy Policy will be updated accordingly.
+    </p>
 
-  <p>
-    Wolpy, uygulama deneyimini geliştirmek amacıyla sınırlı ve kişisel olmayan
-    veriler toplayabilir. Bu veriler; uygulama performansı, özellik kullanımı ve
-    uygulama ile genel etkileşim gibi anonim kullanım bilgilerini içerebilir.
-  </p>
-
-  <p>
-    Uygulama içinde kullanılan bazı hizmetler analiz veya altyapı desteği
-    sağlayabilir. Bu hizmetler, uygulamanın performansını ve kararlılığını
-    geliştirmek amacıyla anonim verileri işleyebilir.
-  </p>
-
-  <p>
-    Uygulamada yer alan duvar kağıtları Wolpy içerik kütüphanesinin bir parçası
-    olarak sunulmaktadır. Bazı duvar kağıtları yapay zeka kullanılarak
-    oluşturulmuş olabilir veya üçüncü taraf içerik kaynaklarından sağlanabilir.
-  </p>
-
-  <p>
-    Gelecekte Wolpy içerisinde kullanıcı hesabı, kişiselleştirme veya abonelik
-    gibi yeni özellikler sunulabilir. Bu özelliklerin kişisel veri işlenmesini
-    gerektirmesi durumunda Gizlilik Politikası güncellenecektir.
-  </p>
-
-  <p>
-    Bu Gizlilik Politikası ile ilgili sorularınız için bizimle iletişime
-    geçebilirsiniz:<br>
-    <strong>wolpy.support@gmail.com</strong>
-  </p>
-</div>
-    
-    <div class="updated" id="updated-text"></div>
+    <p>
+      If you have any questions regarding this Privacy Policy, you can contact us at:
+      <br>
+      <strong>wolpy.support@gmail.com</strong>
+    </p>
 
   </div>
 
-<script>
-  const en = document.getElementById("content-en");
-  const tr = document.getElementById("content-tr");
-  const btnEn = document.getElementById("btn-en");
-  const btnTr = document.getElementById("btn-tr");
-  const updatedText = document.getElementById("updated-text");
+  <!-- TR -->
+  <div id="content-tr" class="hidden">
 
-  function showEN(save = true) {
+    <h1>Gizlilik Politikası</h1>
+
+    <p>
+      Wolpy, kullanıcı gizliliğine saygı duyar ve bilgilerinizi korumayı taahhüt eder.
+    </p>
+
+    <p>
+      Wolpy, uygulama deneyimini geliştirmek amacıyla sınırlı ve kişisel olmayan
+      veriler toplayabilir. Bu veriler; uygulama performansı, özellik kullanımı ve
+      uygulama ile genel etkileşim gibi anonim kullanım bilgilerini içerebilir.
+    </p>
+
+    <p>
+      Wolpy, uygulamanın nasıl kullanıldığını anlamak amacıyla analiz araçları
+      kullanabilir. Bu araçlar; cihaz tipi, uygulama versiyonu, uygulama içi
+      etkileşimler ve genel kullanım alışkanlıkları gibi anonim teknik bilgiler
+      toplayabilir. Bu bilgiler yalnızca kullanıcı deneyimini ve uygulama
+      performansını iyileştirmek amacıyla kullanılır.
+    </p>
+
+    <p>
+      Uygulama içinde kullanılan bazı hizmetler analiz veya altyapı desteği
+      sağlayabilir. Bu hizmetler, uygulamanın performansını ve kararlılığını
+      geliştirmek amacıyla anonim verileri işleyebilir.
+    </p>
+
+    <p>
+      Uygulamada yer alan duvar kağıtları Wolpy içerik kütüphanesinin bir parçası
+      olarak sunulmaktadır. Bazı duvar kağıtları yapay zeka kullanılarak
+      oluşturulmuş olabilir veya üçüncü taraf içerik kaynaklarından sağlanabilir.
+    </p>
+
+    <p>
+      Gelecekte Wolpy içerisinde kullanıcı hesabı, kişiselleştirme veya abonelik
+      gibi yeni özellikler sunulabilir. Bu özelliklerin kişisel veri işlenmesini
+      gerektirmesi durumunda Gizlilik Politikası güncellenecektir.
+    </p>
+
+    <p>
+      Bu Gizlilik Politikası ile ilgili sorularınız için bizimle iletişime
+      geçebilirsiniz:
+      <br>
+      <strong>wolpy.support@gmail.com</strong>
+    </p>
+
+  </div>
+
+  <div class="updated" id="updated-text"></div>
+
+</div>
+
+
+<script>
+
+const en = document.getElementById("content-en");
+const tr = document.getElementById("content-tr");
+
+const btnEn = document.getElementById("btn-en");
+const btnTr = document.getElementById("btn-tr");
+
+const updatedText = document.getElementById("updated-text");
+
+function showEN(save = true) {
+
     en.classList.remove("hidden");
     tr.classList.add("hidden");
+
     btnEn.classList.add("active");
     btnTr.classList.remove("active");
-    updatedText.textContent = "Last updated: March 2026";
-    if (save) localStorage.setItem("lang", "en");
-  }
 
-  function showTR(save = true) {
+    updatedText.textContent = "Last updated: March 2026";
+
+    if (save) localStorage.setItem("lang", "en");
+}
+
+function showTR(save = true) {
+
     tr.classList.remove("hidden");
     en.classList.add("hidden");
+
     btnTr.classList.add("active");
     btnEn.classList.remove("active");
+
     updatedText.textContent = "Son güncelleme: Mart 2026";
+
     if (save) localStorage.setItem("lang", "tr");
-  }
+}
 
-  // 1️⃣ URL parametresi (APP'TEN GELEN)
-  const params = new URLSearchParams(window.location.search);
-  const urlLang = params.get("lang");
 
-  if (urlLang === "tr") {
+const params = new URLSearchParams(window.location.search);
+const urlLang = params.get("lang");
+
+if (urlLang === "tr") {
+
     showTR(false);
-  } else if (urlLang === "en") {
-    showEN(false);
-  } else {
-    // 2️⃣ Daha önce seçilmiş dil
-    const savedLang = localStorage.getItem("lang");
-    if (savedLang === "tr") {
-      showTR(false);
-    } else if (savedLang === "en") {
-      showEN(false);
-    } else {
-      // 3️⃣ Tarayıcı dili (fallback)
-      const browserLang = navigator.language || navigator.userLanguage;
-      if (browserLang && browserLang.startsWith("tr")) {
-        showTR(false);
-      } else {
-        showEN(false);
-      }
-    }
-  }
 
-  // 4️⃣ Manuel değişim
-  btnEn.onclick = () => showEN(true);
-  btnTr.onclick = () => showTR(true);
+} else if (urlLang === "en") {
+
+    showEN(false);
+
+} else {
+
+    const savedLang = localStorage.getItem("lang");
+
+    if (savedLang === "tr") {
+
+        showTR(false);
+
+    } else if (savedLang === "en") {
+
+        showEN(false);
+
+    } else {
+
+        const browserLang = navigator.language || navigator.userLanguage;
+
+        if (browserLang && browserLang.startsWith("tr")) {
+
+            showTR(false);
+
+        } else {
+
+            showEN(false);
+        }
+    }
+}
+
+
+btnEn.onclick = () => showEN(true);
+btnTr.onclick = () => showTR(true);
+
 </script>
 
 
