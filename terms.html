@@ -72,6 +72,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
 
@@ -83,6 +84,7 @@
 
     <!-- ENGLISH -->
     <div id="content-en">
+
       <h1>Terms of Use</h1>
 
       <p>
@@ -97,12 +99,12 @@
       </p>
 
       <h2>Content</h2>
-<p>
-  Wallpapers available in the app are part of the Wolpy content library.
-  Some wallpapers may be created using artificial intelligence or provided
-  through third-party content sources. Wolpy does not claim ownership of
-  third-party content where applicable.
-</p>
+      <p>
+        Wallpapers available in the app are part of the Wolpy content library.
+        Some wallpapers may be created using artificial intelligence or provided
+        through third-party content sources. Wolpy does not claim ownership of
+        third-party content where applicable.
+      </p>
 
       <h2>Disclaimer</h2>
       <p>
@@ -115,10 +117,19 @@
         These Terms of Use may be updated from time to time. Continued use of the
         app constitutes acceptance of the updated terms.
       </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have any questions regarding these Terms, you can contact us at:
+        <br>
+        <strong>wolpy.support@gmail.com</strong>
+      </p>
+
     </div>
 
     <!-- TURKISH -->
     <div id="content-tr" class="hidden">
+
       <h1>Kullanım Koşulları</h1>
 
       <p>
@@ -134,13 +145,13 @@
       </p>
 
       <h2>İçerik</h2>
-<p>
-  Uygulamada yer alan duvar kağıtları Wolpy içerik kütüphanesinin bir
-  parçası olarak sunulmaktadır. Bazı duvar kağıtları yapay zeka
-  kullanılarak oluşturulmuş olabilir veya üçüncü taraf içerik
-  kaynaklarından sağlanabilir. Uygun durumlarda Wolpy üçüncü taraf
-  içeriklerin mülkiyetini talep etmez.
-</p>
+      <p>
+        Uygulamada yer alan duvar kağıtları Wolpy içerik kütüphanesinin bir
+        parçası olarak sunulmaktadır. Bazı duvar kağıtları yapay zeka
+        kullanılarak oluşturulmuş olabilir veya üçüncü taraf içerik
+        kaynaklarından sağlanabilir. Uygun durumlarda Wolpy üçüncü taraf
+        içeriklerin mülkiyetini talep etmez.
+      </p>
 
       <h2>Sorumluluk Reddi</h2>
       <p>
@@ -154,13 +165,22 @@
         kullanılmaya devam edilmesi, güncellenmiş koşulların kabul edildiği
         anlamına gelir.
       </p>
+
+      <h2>İletişim</h2>
+      <p>
+        Bu Kullanım Koşulları ile ilgili sorularınız için bizimle iletişime
+        geçebilirsiniz:
+        <br>
+        <strong>wolpy.support@gmail.com</strong>
+      </p>
+
     </div>
 
     <div class="updated" id="updated-text"></div>
 
   </div>
 
-  <script>
+<script>
   const en = document.getElementById("content-en");
   const tr = document.getElementById("content-tr");
   const btnEn = document.getElementById("btn-en");
@@ -185,7 +205,6 @@
     if (save) localStorage.setItem("lang", "tr");
   }
 
-  // 1️⃣ URL parametresi (APP'TEN GELEN DİL)
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get("lang");
 
@@ -194,15 +213,17 @@
   } else if (urlLang === "en") {
     showEN(false);
   } else {
-    // 2️⃣ Daha önce seçilmiş dil
+
     const savedLang = localStorage.getItem("lang");
+
     if (savedLang === "tr") {
       showTR(false);
     } else if (savedLang === "en") {
       showEN(false);
     } else {
-      // 3️⃣ Tarayıcı dili (fallback)
+
       const browserLang = navigator.language || navigator.userLanguage;
+
       if (browserLang && browserLang.startsWith("tr")) {
         showTR(false);
       } else {
@@ -211,9 +232,10 @@
     }
   }
 
-  // 4️⃣ Manuel dil değişimi
   btnEn.onclick = () => showEN(true);
   btnTr.onclick = () => showTR(true);
+
 </script>
+
 </body>
 </html>
