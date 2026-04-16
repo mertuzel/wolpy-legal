@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Wolpy Support</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  background-color: #0B1020;
+  color: #F9FAFB;
+  line-height: 1.6;
+  padding: 24px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.lang-switch {
+  text-align: right;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  color: #F9FAFB;
+  cursor: pointer;
+  margin-left: 8px;
+  opacity: 0.6;
+}
+
+.lang-switch button.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+p {
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.box {
+  background-color: #12182E;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #8FB3FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.updated {
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="lang-switch">
+<button id="btn-en">🇬🇧 English</button>
+<button id="btn-tr">🇹🇷 Türkçe</button>
+</div>
+
+<!-- EN -->
+
+<div id="content-en">
+
+<h1>Support</h1>
+
+<p>
+If you need help, want to report a bug or have suggestions, you can contact us.
+</p>
+
+<div class="box">
+
+<strong>Email</strong><br>
+
+<a href="mailto:wolpy.app@gmail.com">
+
+wolpy.app@gmail.com
+
+</a>
+
+</div>
+
+<div class="box">
+
+<strong>Legal</strong><br>
+
+<a href="/privacy.html?lang=en">Privacy Policy</a><br>
+
+<a href="/terms.html?lang=en">Terms of Use</a>
+
+</div>
+
+<p>
+We usually respond within a short time.
+</p>
+
+</div>
+
+<!-- TR -->
+
+<div id="content-tr" class="hidden">
+
+<h1>Destek</h1>
+
+<p>
+Yardım almak, hata bildirmek veya öneri paylaşmak için bizimle iletişime geçebilirsiniz.
+</p>
+
+<div class="box">
+
+<strong>E-posta</strong><br>
+
+<a href="mailto:wolpy.app@gmail.com">
+
+wolpy.app@gmail.com
+
+</a>
+
+</div>
+
+<div class="box">
+
+<strong>Yasal</strong><br>
+
+<a href="/privacy.html?lang=tr">Gizlilik Politikası</a><br>
+
+<a href="/terms.html?lang=tr">Kullanım Koşulları</a>
+
+</div>
+
+<p>
+Genellikle kısa süre içinde dönüş yapıyoruz.
+</p>
+
+</div>
+
+<div class="updated" id="updated-text"></div>
+
+</div>
+
+
+<script>
+
+const en = document.getElementById("content-en");
+const tr = document.getElementById("content-tr");
+
+const btnEn = document.getElementById("btn-en");
+const btnTr = document.getElementById("btn-tr");
+
+const updatedText = document.getElementById("updated-text");
+
+function showEN(save = true) {
+
+en.classList.remove("hidden");
+tr.classList.add("hidden");
+
+btnEn.classList.add("active");
+btnTr.classList.remove("active");
+
+updatedText.textContent = "";
+
+if (save) localStorage.setItem("lang", "en");
+
+}
+
+function showTR(save = true) {
+
+tr.classList.remove("hidden");
+en.classList.add("hidden");
+
+btnTr.classList.add("active");
+btnEn.classList.remove("active");
+
+updatedText.textContent = "";
+
+if (save) localStorage.setItem("lang", "tr");
+
+}
+
+const params = new URLSearchParams(window.location.search);
+const urlLang = params.get("lang");
+
+if (urlLang === "tr") {
+
+showTR(false);
+
+} else if (urlLang === "en") {
+
+showEN(false);
+
+} else {
+
+const savedLang = localStorage.getItem("lang");
+
+if (savedLang === "tr") {
+
+showTR(false);
+
+} else if (savedLang === "en") {
+
+showEN(false);
+
+} else {
+
+const browserLang = navigator.language || navigator.userLanguage;
+
+if (browserLang && browserLang.startsWith("tr")) {
+
+showTR(false);
+
+} else {
+
+showEN(false);
+
+}
+
+}
+
+}
+
+btnEn.onclick = () => showEN(true);
+btnTr.onclick = () => showTR(true);
+
+</script>
+
+
+</body>
+</html>
