@@ -51,6 +51,12 @@
       margin-bottom: 16px;
     }
 
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
     p {
       opacity: 0.9;
       margin-bottom: 16px;
@@ -111,6 +117,26 @@
       provided through third-party content sources.
     </p>
 
+    <h2>Push Notifications</h2>
+
+    <p>
+      Wolpy may send optional push notifications to inform users about new wallpaper
+      collections, featured content, or important app updates. Notifications can be
+      disabled at any time through device settings.
+    </p>
+
+    <p>
+      Push notifications do not contain personal information and are used solely
+      to improve the user experience.
+    </p>
+
+    <h2>Local Data Storage</h2>
+
+    <p>
+      Some user preferences such as favorites may be stored locally on the device
+      to improve the app experience. This data is not used to personally identify users.
+    </p>
+
     <p>
       In the future, Wolpy may introduce additional features such as user accounts,
       personalization, or subscriptions. If such features require the processing of
@@ -160,6 +186,28 @@
       oluşturulmuş olabilir veya üçüncü taraf içerik kaynaklarından sağlanabilir.
     </p>
 
+    <h2>Bildirimler</h2>
+
+    <p>
+      Wolpy, yeni duvar kağıdı koleksiyonları, öne çıkan içerikler veya uygulama
+      güncellemeleri hakkında kullanıcıları bilgilendirmek amacıyla isteğe bağlı
+      bildirimler gönderebilir. Bildirimler cihaz ayarlarından istenildiği zaman
+      kapatılabilir.
+    </p>
+
+    <p>
+      Bildirimler kişisel veri içermez ve yalnızca kullanıcı deneyimini iyileştirmek
+      amacıyla kullanılır.
+    </p>
+
+    <h2>Yerel Veri Saklama</h2>
+
+    <p>
+      Favoriler gibi bazı kullanıcı tercihleri uygulama deneyimini iyileştirmek
+      amacıyla cihaz üzerinde yerel olarak saklanabilir. Bu veriler kullanıcıyı
+      kişisel olarak tanımlamak için kullanılmaz.
+    </p>
+
     <p>
       Gelecekte Wolpy içerisinde kullanıcı hesabı, kişiselleştirme veya abonelik
       gibi yeni özellikler sunulabilir. Bu özelliklerin kişisel veri işlenmesini
@@ -198,7 +246,7 @@ function showEN(save = true) {
     btnEn.classList.add("active");
     btnTr.classList.remove("active");
 
-    updatedText.textContent = "Last updated: March 2026";
+    updatedText.textContent = "Last updated: April 2026";
 
     if (save) localStorage.setItem("lang", "en");
 }
@@ -211,7 +259,7 @@ function showTR(save = true) {
     btnTr.classList.add("active");
     btnEn.classList.remove("active");
 
-    updatedText.textContent = "Son güncelleme: Mart 2026";
+    updatedText.textContent = "Son güncelleme: Nisan 2026";
 
     if (save) localStorage.setItem("lang", "tr");
 }
