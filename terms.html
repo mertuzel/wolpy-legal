@@ -76,13 +76,12 @@
 <body>
   <div class="container">
 
-    <!-- Language Switch -->
     <div class="lang-switch">
       <button id="btn-en">🇬🇧 English</button>
       <button id="btn-tr">🇹🇷 Türkçe</button>
     </div>
 
-    <!-- ENGLISH -->
+    <!-- EN -->
     <div id="content-en">
 
       <h1>Terms of Use</h1>
@@ -106,10 +105,23 @@
         third-party content where applicable.
       </p>
 
+      <h2>License</h2>
+      <p>
+        Wallpapers provided in the app are intended for personal use only. You may
+        download and use the wallpapers on your personal devices. Redistribution,
+        resale, or commercial use of the wallpapers is not permitted.
+      </p>
+
       <h2>Disclaimer</h2>
       <p>
         The app is provided "as is" without warranties of any kind. We do not
         guarantee that the app will be error-free or uninterrupted.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        Wolpy shall not be held responsible for any damages or issues resulting
+        from the use of the app or its content.
       </p>
 
       <h2>Changes</h2>
@@ -127,7 +139,7 @@
 
     </div>
 
-    <!-- TURKISH -->
+    <!-- TR -->
     <div id="content-tr" class="hidden">
 
       <h1>Kullanım Koşulları</h1>
@@ -153,10 +165,23 @@
         içeriklerin mülkiyetini talep etmez.
       </p>
 
+      <h2>Lisans</h2>
+      <p>
+        Uygulamada sunulan duvar kağıtları yalnızca kişisel kullanım içindir.
+        Duvar kağıtlarını kişisel cihazlarınızda kullanabilirsiniz. İçeriklerin
+        yeniden dağıtılması, satılması veya ticari amaçlarla kullanılması yasaktır.
+      </p>
+
       <h2>Sorumluluk Reddi</h2>
       <p>
         Uygulama "olduğu gibi" sunulmaktadır. Uygulamanın hatasız veya kesintisiz
         çalışacağı garanti edilmez.
+      </p>
+
+      <h2>Sorumluluk Sınırı</h2>
+      <p>
+        Wolpy, uygulamanın veya içeriklerin kullanımından doğabilecek herhangi bir
+        zarar veya sorundan sorumlu tutulamaz.
       </p>
 
       <h2>Değişiklikler</h2>
@@ -181,55 +206,77 @@
   </div>
 
 <script>
+
   const en = document.getElementById("content-en");
   const tr = document.getElementById("content-tr");
+
   const btnEn = document.getElementById("btn-en");
   const btnTr = document.getElementById("btn-tr");
+
   const updatedText = document.getElementById("updated-text");
 
   function showEN(save = true) {
-    en.classList.remove("hidden");
-    tr.classList.add("hidden");
-    btnEn.classList.add("active");
-    btnTr.classList.remove("active");
-    updatedText.textContent = "Last updated: March 2026";
-    if (save) localStorage.setItem("lang", "en");
+
+      en.classList.remove("hidden");
+      tr.classList.add("hidden");
+
+      btnEn.classList.add("active");
+      btnTr.classList.remove("active");
+
+      updatedText.textContent = "Last updated: April 2026";
+
+      if (save) localStorage.setItem("lang", "en");
   }
 
   function showTR(save = true) {
-    tr.classList.remove("hidden");
-    en.classList.add("hidden");
-    btnTr.classList.add("active");
-    btnEn.classList.remove("active");
-    updatedText.textContent = "Son güncelleme: Mart 2026";
-    if (save) localStorage.setItem("lang", "tr");
+
+      tr.classList.remove("hidden");
+      en.classList.add("hidden");
+
+      btnTr.classList.add("active");
+      btnEn.classList.remove("active");
+
+      updatedText.textContent = "Son güncelleme: Nisan 2026";
+
+      if (save) localStorage.setItem("lang", "tr");
   }
 
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get("lang");
 
   if (urlLang === "tr") {
-    showTR(false);
+
+      showTR(false);
+
   } else if (urlLang === "en") {
-    showEN(false);
+
+      showEN(false);
+
   } else {
 
-    const savedLang = localStorage.getItem("lang");
+      const savedLang = localStorage.getItem("lang");
 
-    if (savedLang === "tr") {
-      showTR(false);
-    } else if (savedLang === "en") {
-      showEN(false);
-    } else {
+      if (savedLang === "tr") {
 
-      const browserLang = navigator.language || navigator.userLanguage;
+          showTR(false);
 
-      if (browserLang && browserLang.startsWith("tr")) {
-        showTR(false);
+      } else if (savedLang === "en") {
+
+          showEN(false);
+
       } else {
-        showEN(false);
+
+          const browserLang = navigator.language || navigator.userLanguage;
+
+          if (browserLang && browserLang.startsWith("tr")) {
+
+              showTR(false);
+
+          } else {
+
+              showEN(false);
+          }
       }
-    }
   }
 
   btnEn.onclick = () => showEN(true);
